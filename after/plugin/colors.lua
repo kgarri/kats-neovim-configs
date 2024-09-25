@@ -4,6 +4,8 @@ function ColorMyPencils(color)
 
 	vim.api.nvim_set_hl(0,"Normal", {bg ="none"})
 	vim.api.nvim_set_hl(0,"NormalFloat", {bg ="none"})
-end 
+    vim.api.nvim_set_hl(0,"nCursor",{fg= "#f5b1cc", bg = "#f5b1cc"})
+
+end
 
 ColorMyPencils()
