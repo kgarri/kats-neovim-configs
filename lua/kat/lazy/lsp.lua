@@ -29,7 +29,6 @@ return {
                 "lua_ls",
                 "rust_analyzer",
                 "pyright",
-                "julia-lsp",
             },
             handlers = {
                 function(server_name) -- default handler (optional)

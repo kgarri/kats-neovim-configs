@@ -13,5 +13,8 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     spec = "kat.lazy",
-    change_detection = { notify = false }
+    change_detection = { notify = false },
+    rocks = {
+        enabled = false,
+    },
 })
