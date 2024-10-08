@@ -1,5 +1,5 @@
 function ColorMyPencils(color)
-    color = color or 'rose-pine'
+    color = color or "synthweave-transparent"
     vim.cmd.colorscheme(color)
 
     vim.api.nvim_set_hl(0, "Normal", {fg="none", bg = "none" })
@@ -17,7 +17,7 @@ return {
         lazy = false,
         opts = {},
         config = function()
-            ColorMyPencils('rose-pine')
+            ColorMyPencils()
         end
     },
     {
@@ -89,6 +89,16 @@ return {
                     italic = false,
                 },
             })
+        end
+    },
+    {
+        "samharju/synthweave.nvim",
+        lazy = false, -- make sure we load this during startup if it is your main colorscheme
+        priority = 1000,
+        config = function()
+            --vim.cmd.colorscheme("synthweave")
+            -- transparent version
+            vim.cmd.colorscheme("synthweave-transparent")
         end
     },
 
