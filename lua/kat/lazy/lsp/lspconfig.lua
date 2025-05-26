@@ -20,6 +20,17 @@ return {
             vim.lsp.protocol.make_client_capabilities(),
             cmp_lsp.default_capabilities())
 
+        vim.api.nvim_create_autocmd("Filetype", {
+            pattern = { "html", "shtml", "htm" },
+            callback = function()
+                vim.lsp.start({
+                    name = "superhtml",
+                    cmd = { "superhtml", "lsp" },
+                    root_dir = vim.fs.dirname(vim.fs.find({".git"}, { upward = true })[1])
+                })
+            end
+        })
+
         mason_lspconfig.setup_handlers(
             {
                 function(server_name) -- default handler (optional)
@@ -63,6 +74,16 @@ return {
                             },
 
                         },
+                    }
+                end,
+                ["ltex"]= function()
+                    lspconfig["ltex"].setup{
+                        capabilities = capabilities,
+                        settings = {
+                            ["ltex"] = {
+                                language = "en-US"
+                            }
+                        }
                     }
                 end,
             }

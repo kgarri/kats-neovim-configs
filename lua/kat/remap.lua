@@ -21,8 +21,10 @@ vim.keymap.set("v", "<leader>y", '"+y')
 vim.keymap.set("n", "<leader>Y", '"+Y')
 
 --used to delet stuff and have it be deleted in a void reg
-vim.keymap.set("n", "<leader>d", '"_d')
-vim.keymap.set("v", "<leader>d", '"_d')
+vim.keymap.set("n", "<leader>d", '"*d')
+vim.keymap.set("v", "<leader>d", '"*d')
+vim.keymap.set("v", "<leader>D", '"_d')
+vim.keymap.set("n", "<leader>D", '"_d')
 
 --used to make <C-c> equivalent to <Esc>
 vim.keymap.set("i", "<C-c>", "<Esc>")

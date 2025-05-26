@@ -19,6 +19,11 @@ return {
 				"pyright",
 				"clangd",
 				"ts_ls",
+                "ltex",
+                "zls",
+                "lemminx",
+                "bashls",
+                "gopls",
 			},
 
 			automatic_installation = true,
