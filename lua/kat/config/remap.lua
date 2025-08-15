@@ -42,6 +42,7 @@ end, { desc = "format the current file with the lsp" })
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
-vim.keymap.set("n", "<leader>q", function()
-	vim.diagnostic.open_float(0, { scope = "line" })
-end)
+
+-- Code Folding
+vim.keymap.set("n", "-", "<cmd>foldclose<CR>", { desc = "Close code fold" })
+vim.keymap.set("n", "+", "<cmd>foldopen<CR>", { desc = "Open code fold" })
